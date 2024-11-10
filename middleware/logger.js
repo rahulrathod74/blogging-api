@@ -1,4 +1,6 @@
-module.exports=(req,res,next)=>{
-    console.log(`$(req.method) ${req,url} -${new Date().toISOString()}`);
-    next()
-}
+const logger = (req, res, next) => {
+    console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
+    next();
+};
+
+module.exports = logger;
